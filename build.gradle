@@ -3,7 +3,8 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.github.dcendents.android-maven'
-group='org.bitbucket.filipepereira21'
+//group='org.bitbucket.filipepereira21'
+group = 'com.github.filipemvpereira'
 
 
 android {
