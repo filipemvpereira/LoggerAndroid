@@ -1,11 +1,10 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'kotlin-android'
-//apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.github.dcendents.android-maven'
 //group='org.bitbucket.filipepereira21'
 group = 'com.github.filipemvpereira'
-
 
 android {
     compileSdkVersion 29
@@ -29,6 +28,33 @@ android {
     }
 
 }
+
+buildscript {
+    ext.build_gradle_version = '3.3.1'
+    ext.google_services_version = '4.2.0'
+    ext.kotlin_version = '1.3.50'
+
+    repositories {
+        google()
+        jcenter()
+        /*maven {
+            url 'https://maven.google.com'
+        }*/
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:$build_gradle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "com.google.gms:google-services:$google_services_version"
+    }
+}
+
+repositories {
+    mavenCentral()
+    google()
+    jcenter()
+}
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
